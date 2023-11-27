@@ -1,0 +1,22 @@
+#=============================================================================#
+# Base Rules
+#
+# The rules in this file establish a common base for Ruby files to avoid areas
+# of inconsistency across platforms. There aren't many of these, but keeping
+# them separate allows for the other files to focus exclusively on legibility
+# and accessibility.
+#=============================================================================#
+
+# Use universal line feed characters as the line break character to avoid
+# inconsistencies across platforms.
+Layout/EndOfLine:
+  EnforcedStyle: lf
+
+# Double quoted string literals match the majority of other languages and don't
+# break the flow of work when interpolation is necessary. Other literals can be
+# used for the few cases it improves legibility.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes

@@ -1,0 +1,16 @@
+#=============================================================================#
+# Legibility Rules
+#
+# The rules in this file aim to make Ruby easy to understand for all future
+# readers of any file.
+#=============================================================================#
+
+# Documentation is important for giving future readers a quick understanding of
+# what your classes and methods do. It is your opportunity to clearly define
+# how to use the public API of a class.
+#
+# There is a large amount of wasted development time across companies because
+# of poor public API documentation.
+Style/DocumentationMethod:
+  Enabled: true
+  RequireForNonPublicMethods: false

@@ -1,0 +1,62 @@
+#=============================================================================#
+# Accessibility Rules
+#
+# The rules in this file aim to make Ruby code accessible to individuals with
+# visual impairments and generally improve ease of reading for everyone.
+#=============================================================================#
+
+# This is the big one; the one most people will absolutely disagree with, but
+# it is critical.
+#
+# The 2 space indentation rule the Ruby community uses creates a large amount
+# of friction for anyone with visual impairments. It's not ok to force people
+# to jump through indentation conversion hoops to participate in a community.
+#
+# Tabs provide the accessibility seam necessary for everyone to read code.
+Layout/IndentationStyle:
+  EnforcedStyle: tabs
+
+# A consequence of using tabs is that only 1 character is ever used for any
+# indentation level.
+#
+# The entire concept of an indentation width disappears from static analysis
+# tools and only has meaning within the person's display configuration.
+Layout/IndentationWidth:
+  Width: 1
+
+# Many languages with terminator characters use leading dot syntax as a way to
+# continue a method chain across lines. Ruby does not require any terminator
+# character.
+#
+# When reading top-down it is useful to have the dot as a trailing character
+# indicating the line continues. This is the opposite of languages like English
+# where the absence of a full stop indicates continuation.
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+# Indenting to receiver and alignment cause a large amount of righward drift
+# in codebases while requiring extra typing work to maintain these alignments
+# as code changes over time.
+#
+# Simple indentation for method calls eliminates most of the rightward drift
+# while providing lower strain maintenance. It reduces the distance your eyes
+# scan to read the method call and the next lines.
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# This is one of the only pieces of configuration that purposely adds rightward
+# drift to the codebase, but does so for good reason: visual distinction of
+# access control sections within classes.
+#
+# This small amount of rightward drift makes these areas distinct and provides
+# incentive to eliminate them by making smaller classes.
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+# Separating chained method calls allows you to visualize complexity as a
+# function of the number of lines and ease understanding of the individual
+# parts of the transformation while eliminating rightward drift.
+#
+# The extra lines are additional incentive to encapsulate these details.
+Layout/SingleLineBlockChain:
+  Enabled: true

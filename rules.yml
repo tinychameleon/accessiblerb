@@ -1,0 +1,11 @@
+#=============================================================================#
+# Accessible Ruby Rules
+#
+# This file combines all the others. Look in each to see the rules and reasons
+# for their configuration.
+#=============================================================================#
+
+inherit_from:
+  - base.yml
+  - accessibility.yml
+  - legibility.yml
